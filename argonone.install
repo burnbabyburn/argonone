@@ -1,9 +1,13 @@
 pre_install() {
   echo "Checking Hardware Model..."
   if grep "Raspberry Pi 4" /proc/device-tree/model ; then
+  
+  #Check if  pip is installed or else install it
+  if ! dpkg-query -W -f='${Status}' python-pip | grep "ok installed"; then apt install python-pip; fi
+
     echo "Building New Virtual Environment in /opt/argonone..."
     python -m venv --clear /opt/argonone
-    /opt/argonone/bin/python3 -m pip install pysmbus RPi.GPIO
+    /opt/argonone/bin/python3 -m pip install pysmbus RPi.GPIO setuptools wheel
 
     echo "Enabling i2C..."
     BOOT_CFG="/boot/config.txt"
