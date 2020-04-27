@@ -10,14 +10,14 @@ pre_install() {
     if [ -e "${BOOT_CFG}" ]; then
       touch "${BOOT_CFG}"
     fi
-    if ! grep "dtparam=i2c_arm=on" "${BOOT_CFG}" >/dev/null 2>&1 ; then
-      echo "dtparam=i2c_arm=on" >> "${BOOT_CFG}"
+    if ! grep "dtparam=i2c=on" "${BOOT_CFG}" >/dev/null 2>&1 ; then
+      echo "dtparam=i2c=on" >> "${BOOT_CFG}"
     fi
     if ! grep "dtparam=i2c-1=on" "${BOOT_CFG}" >/dev/null 2>&1 ; then
       echo "dtparam=i2c-1=on" >> "${BOOT_CFG}"
     fi
 
-    MODULE_CFG="/etc/modules-load.d/raspberrypi.conf"
+    MODULE_CFG="/etc/modules-load.d/rpi2.conf"
     if [ -e "${MODULE_CFG}" ]; then
       touch "${MODULE_CFG}"
       chmod 644 "${MODULE_CFG}"
