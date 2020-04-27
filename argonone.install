@@ -2,8 +2,19 @@ pre_install() {
   echo "Checking Hardware Model..."
   if grep "Raspberry Pi 4" /proc/device-tree/model ; then
   
-  #Check if  pip is installed or else install it
-  if ! dpkg-query -W -f='${Status}' python-pip | grep "ok installed"; then apt install python-pip; fi
+# from offical argon1.sh script with detailed deps just incase
+pkglist=(i2c-tools libgdbm-compat4 libgdbm6 libi2c0 libperl5.28 libpython-stdlib libpython2-stdlib libpython2.7-minimal libpython2.7-stdlib perl perl-modules-5.28 python python-minimal python-rpi.gpio python-smbus python2 python2-minimal python2.7 python2.7-minimal python3-rpi.gpio python3-smbus rpi.gpio-common alsa-utils binutils binutils-aarch64-linux-gnu binutils-common cpio initramfs-tools initramfs-tools-core klibc-utils libbinutils libfftw3-single3 libgomp1 libklibc libnewt0.52 libpopt0 libsamplerate0 libslang2 linux-base lua5.1 psmisc whiptail python-pip)
+for curpkg in ${pkglist[@]}; do
+	sudo apt-get install -y $curpkg
+	RESULT=$(argon_check_pkg "$curpkg")
+	if [ "NG" == "$RESULT" ]
+	then
+		echo "********************************************************************"
+		echo "Please also connect device to the internet and restart installation."
+		echo "********************************************************************"
+		exit
+	fi
+done
 
     echo "Building New Virtual Environment in /opt/argonone..."
     python -m venv --clear /opt/argonone
