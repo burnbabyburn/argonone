@@ -17,36 +17,7 @@ set -e
 case "$1" in
     install|upgrade)
     echo "Checking Hardware Model..."
-    if grep "Raspberry Pi 4" /proc/device-tree/model ; then
-  
-      echo "Building New Virtual Environment in /opt/argonone..."
-      python3 -m venv --clear /opt/argonone
-      /opt/argonone/bin/python3 -m pip install pysmbus RPi.GPIO setuptools wheel
-
-      echo "Enabling i2C..."
-      BOOT_CFG="/boot/config.txt"
-      if [ -e "${BOOT_CFG}" ]; then
-        touch "${BOOT_CFG}"
-      fi
-      if ! grep "dtparam=i2c=on" "${BOOT_CFG}" >/dev/null 2>&1 ; then
-        echo "dtparam=i2c=on" >> "${BOOT_CFG}"
-      fi
-      if ! grep "dtparam=i2c-1=on" "${BOOT_CFG}" >/dev/null 2>&1 ; then
-        echo "dtparam=i2c-1=on" >> "${BOOT_CFG}"
-      fi
-
-      MODULE_CFG="/etc/modules-load.d/rpi2.conf"
-      if [ -e "${MODULE_CFG}" ]; then
-        touch "${MODULE_CFG}"
-        chmod 644 "${MODULE_CFG}"
-      fi
-      if ! grep "i2c-dev" "${MODULE_CFG}" >/dev/null 2>&1 ; then
-        echo "i2c-dev" >> "${MODULE_CFG}"
-      fi
-      if ! grep "i2c-bcm2708" "${MODULE_CFG}" >/dev/null 2>&1 ; then
-        echo "i2c-bcm2708" >> "${MODULE_CFG}"
-      fi
-    else
+    if ! grep "Raspberry Pi 4" /proc/device-tree/model ; then
       echo "Not a Raspberry Pi Model 4!"
       /usr/bin/false
     fi
