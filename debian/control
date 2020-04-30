@@ -1,0 +1,16 @@
+Source: argonone
+Section: unknown
+Priority: optional
+Maintainer: root <root@unknown>
+Build-Depends: debhelper (>= 11)
+Standards-Version: 4.1.3
+Homepage: <https://download.argon40.com/argon1.sh>
+#Vcs-Browser: https://salsa.debian.org/debian/argonone
+#Vcs-Git: https://salsa.debian.org/debian/argonone.git
+
+Package: argonone
+Architecture: any
+Depends: libc6 (>= 2.2.1), default-mta | mail-transport-agent
+#Depends: python3-pip, python3-rpi.gpio, python3-smbus, i2c-tools, python3-venv ${misc:Depends}
+Description: Argon One Service and Control Scripts
+ FanControl and Power Button Functions including a systemd.service file.
