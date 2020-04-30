@@ -10,7 +10,6 @@ Homepage: <https://download.argon40.com/argon1.sh>
 
 Package: argonone
 Architecture: any
-Depends: libc6 (>= 2.2.1), default-mta | mail-transport-agent
-#Depends: ${misc:Depends}, python3, python3-pip, python3-setuptools, python3-rpi.gpio, python3-smbus, i2c-tools, python3-venv, python3-dev
+Depends: ${misc:Depends}, python3, python3-pip, python3-setuptools, python3-rpi.gpio, python3-smbus, i2c-tools, python3-venv, python3-dev
 Description: Argon One Service and Control Scripts
  FanControl and Power Button Functions including a systemd.service file.
