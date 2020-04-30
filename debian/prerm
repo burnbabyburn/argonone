@@ -19,8 +19,8 @@ set -e
 
 case "$1" in
     remove|upgrade|deconfigure)
-	systemctl stop argononed.service
-    systemctl disable argononed.service
+	#systemctl stop argononed.service
+    #systemctl disable argononed.service
     ;;
 
     failed-upgrade)
