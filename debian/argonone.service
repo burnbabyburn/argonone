@@ -5,6 +5,6 @@ After=multi-user.target
 Type=simple
 Restart=always
 RemainAfterExit=true
-ExecStart=python3 /opt/argonone/argonone.py
+ExecStart=python3 /usr/share/argonone/argonone.py
 [Install]
 WantedBy=multi-user.target
