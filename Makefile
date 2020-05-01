@@ -12,6 +12,6 @@ clean:
 distclean:	clean
 
 uninstall:
-		-rm -rf $(DESTDIR)$(prefix)/opt/argonone
+		-rm -rf $(DESTDIR)$(prefix)/opt/argonone/
 
 .PHONY: install uninstall
