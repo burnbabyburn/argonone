@@ -18,7 +18,9 @@ case "$1" in
     install|upgrade)
     echo "Checking Hardware Model..."
     if grep "Raspberry Pi 4" /proc/device-tree/model ; then
-	  [ ! -d "/opt/argonone" ] && mkdir /opt/argonone
+	  if [ ! -d "/opt/argonone" ] ; then 
+	    mkdir /opt/argonone 
+	  fi
 	else
       echo "Not a Raspberry Pi Model 4!"
       /usr/bin/false
