@@ -20,7 +20,7 @@ case "$1" in
     if grep "Raspberry Pi 4" /proc/device-tree/model ; then
 	  if [ ! -d "/opt/argonone" ] ; then 
 	  echo "Creating application folder"
-	    mkdir -p /usr/share/argonone/
+	    #mkdir -p /usr/share/argonone/
 	  fi
 	else
       echo "Not a Raspberry Pi Model 4!"
