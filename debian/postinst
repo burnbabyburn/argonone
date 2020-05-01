@@ -20,10 +20,10 @@ set -e
 
 case "$1" in
     configure)
-	  echo "Building New Virtual Environment in /opt/argonone..."
-      python3 -m venv --clear /opt/argonone
-      /opt/argonone/bin/python3 -m pip install setuptools wheel 
-	  /opt/argonone/bin/python3 -m pip install pysmbus RPi.GPIO 
+	  #echo "Building New Virtual Environment in /opt/argonone..."
+      #python3 -m venv --clear /opt/argonone
+      #/opt/argonone/bin/python3 -m pip install setuptools wheel 
+	  #/opt/argonone/bin/python3 -m pip install pysmbus RPi.GPIO 
 
       echo "Enabling i2C..."
       BOOT_CFG="/boot/config.txt"
