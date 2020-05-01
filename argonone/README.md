@@ -10,7 +10,7 @@ This Arch Linux Package installs all needed scripts and services and configures 
 Enable it before reboot:
 
 ```bash
-systemctl enable argononed.service
+systemctl enable argonone.service
 ```
 
 ## This repo will be destroy if kounch patch his repo for Raspberry Pi 4, don't want to fork, just helping users wants to have a ready to use solution

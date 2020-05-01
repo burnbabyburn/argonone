@@ -1,5 +1,5 @@
 #!/bin/bash
-daemonconfigfile=/etc/argononed.conf
+daemonconfigfile=/etc/argonone.conf
 echo "--------------------------------------"
 echo "Argon One Fan Speed Configuration Tool"
 echo "--------------------------------------"

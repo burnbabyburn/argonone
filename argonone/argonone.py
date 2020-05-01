@@ -87,7 +87,7 @@ def load_config(fname):
 
 def temp_check():
     fanconfig = ["65=100", "60=55", "55=10"]
-    tmpconfig = load_config("/etc/argononed.conf")
+    tmpconfig = load_config("/etc/argonone.conf")
     if len(tmpconfig) > 0:
         fanconfig = tmpconfig
     address = 0x1a
