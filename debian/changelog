@@ -1,5 +1,9 @@
 argonone (0.0-1) unstable; urgency=medium
 
   * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * We moved from `/opt` to `/usr/share` for DebianReasons
+  * renaimed all files to argonone (missing d) so packagebuilder recognizes service file.
+  * A silent default config is included as default. The difference between `3` and `100` as a fanspeed value in `/etc/argonone.conf` is nearly not noticable. GO Exponential!
+  * Changed vcgencmd path to `/usr/bin/vcgencmd` - Maybe that's not correct for raspian; but it is for [RPI23](https://github.com/drtyhlpr/rpi23-gen-image)
 
  -- root <root@unknown>  Thu, 30 Apr 2020 21:51:44 +0200
