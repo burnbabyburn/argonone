@@ -19,6 +19,7 @@ case "$1" in
     echo "Checking Hardware Model..."
     if grep "Raspberry Pi 4" /proc/device-tree/model ; then
 	  if [ ! -d "/opt/argonone" ] ; then 
+	  echo "Creating application folder"
 	    mkdir /opt/argonone 
 	  fi
 	else
