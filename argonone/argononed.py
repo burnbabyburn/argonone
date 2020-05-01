@@ -93,7 +93,7 @@ def temp_check():
     address = 0x1a
     prevblock = 0
     while True:
-        temp = os.popen("/opt/vc/bin/vcgencmd measure_temp").readline()
+        temp = os.popen("/usr/bin/vcgencmd measure_temp").readline()
         temp = temp.replace("temp=", "")
         val = float(temp.replace("'C", ""))
         block = get_fanspeed(val, fanconfig)

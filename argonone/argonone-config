@@ -72,7 +72,7 @@ then
 	echo "#" >> $daemonconfigfile
 	echo "# Min Temp=Fan Speed" >> $daemonconfigfile
 	echo 1"="100 >> $daemonconfigfile
-	sudo systemctl restart argononed.service
+	sudo systemctl restart argonone.service
 	echo "Fan always on."
 	exit
 elif [ $newmode -eq 2 ]
@@ -98,7 +98,7 @@ then
 		echo $curtemp"="$curfan >> $daemonconfigfile
 		curtemp=$((curtemp+5))
 	done
-	sudo systemctl restart argononed.service
+	sudo systemctl restart argonone.service
 	echo "Configuration updated."
 	exit
 fi
@@ -160,7 +160,7 @@ echo
 if [ $paircounter -gt 0 ]
 then
 	echo "Thank you!  We saved "$paircounter" pairs."
-	sudo systemctl restart argononed.service
+	sudo systemctl restart argonone.service
 	echo "Changes should take effect now."
 else
 	echo "Cancelled, no data saved."

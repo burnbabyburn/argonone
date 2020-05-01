@@ -30,7 +30,7 @@ case "$1" in
       if [ -e "${BOOT_CFG}" ]; then
         touch "${BOOT_CFG}"
       fi
-      if ! grep "dtparam=i2c=on" "${BOOT_CFG}" >/dev/null 2>&1 ; then
+      if ! grep "dtparam=i2c_arm=on" "${BOOT_CFG}" >/dev/null 2>&1 ; then
         echo "dtparam=i2c=on" >> "${BOOT_CFG}"
       fi
       if ! grep "dtparam=i2c-1=on" "${BOOT_CFG}" >/dev/null 2>&1 ; then
