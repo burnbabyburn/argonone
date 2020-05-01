@@ -14,6 +14,7 @@ My contribution is the deb file for debian systems.
 * renaimed all files to argonone (missing d) so packagebuilder recognizes service file.
 * A silent default config is included as default. The difference between `3` and `100` as a fanspeed value in `/etc/argonone.conf` is nearly not noticable. GO Exponential!
 * Changed vcgencmd path to `/usr/bin/vcgencmd` - Maybe that's not correct for raspian; but it is for [RPI23](https://github.com/drtyhlpr/rpi23-gen-image)
+* Removed python venv as it caused unsolvable trouble for me. As a plus we now have apt updating our libs and don't need to build python packages on install. It's still possible that the advantage of venv negates the positive effects.
 
 ## Building Package
 Starting from a minimal debootstrap aarch64
